@@ -5,6 +5,9 @@ import logo from "./assets/logo2.png";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
+const ENV = window.__ENV || {};
+const title = ENV.TITLE || "National Trenches Forces";
+const x = ENV.X || "https://x.com/trenches_forces";
 export const App = () => {
   const navigate = useNavigate();
   return (
@@ -12,7 +15,7 @@ export const App = () => {
       <div className="home-container">
         <div className="info">
           <img src={logo} alt="Logo" className="logo" />
-          <h1>National Trenches Forces</h1>
+          <h1>{title}</h1>
           <h2>Are you a Dip Sniper or a Moon Commander?</h2>
           <span>
             A Scout for hidden gems, or a Rugpull Survivor still standing
@@ -23,11 +26,7 @@ export const App = () => {
             now.
           </h3>
           <div className="btns">
-            <button
-              onClick={() =>
-                window.open(" https://x.com/trenches_forces", "_blank")
-              }
-            >
+            <button onClick={() => window.open(x, "_blank")}>
               <RiTwitterXLine />
             </button>
             <button className="apply-button" onClick={() => navigate("/apply")}>

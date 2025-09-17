@@ -22,6 +22,7 @@ import stamp from "./assets/stamp2.png";
 import { RiHome5Fill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
+
 export const Card = () => {
   const [applyNow, setApplyNow] = useState(true);
   const [openForm, setOpenForm] = useState(false);
